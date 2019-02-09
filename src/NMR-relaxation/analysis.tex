@@ -7,7 +7,7 @@ M (2n \tau) = M_0 \exp \left( -\dfrac{2n\tau}{T_2} \right)
 \end{equation}
 Спектометр подавал импульсы с разными $ \tau $.
 \subsubsection{Раствор соли $MnSO_4$}
-Исходные экспериментальные данные хорошо похожи на экспоненту.
+Исходные экспериментальные данные хорошо похожи на экспоненту (график \ref{fig:mnt2exper})
 \begin{figure}[h]
 	\hspace{-5em}
 	\includegraphics[width=1.2\linewidth]{data/Mn_T_2_exper}
@@ -15,7 +15,7 @@ M (2n \tau) = M_0 \exp \left( -\dfrac{2n\tau}{T_2} \right)
 	\label{fig:mnt2exper}
 \end{figure}
 
-Для определения $ T_2 $ построим график $ \ln \left(\dfrac{M}{M_0} \right) = f(\tau) $. Ожидается линейная зависимость с наклоном $ k = -1/T_2 $.
+Для определения $ T_2 $ построим график $ \ln \left(\dfrac{M}{M_0} \right) = f(\tau) $. Ожидается линейная зависимость с наклоном $ k = -1/T_2 $ (график \ref{fig:mnt2reg}).
 
 \begin{figure}[!h]
 %	\centering
@@ -28,7 +28,7 @@ M (2n \tau) = M_0 \exp \left( -\dfrac{2n\tau}{T_2} \right)
 Мы находим $ T_2 $ для различных концентраций (см. таблицу \ref{table:all-T})
 
 \subsubsection{Раствор $Na_2 SO_4$}
-Производим аналогичные подсчеты и строим те же графики:
+Производим аналогичные подсчеты и строим те же графики (графики \ref{fig:nat2exper} и \ref{fig:nat2reg}).
 
 \begin{figure}[!h]
 	\hspace{-5em}
@@ -44,6 +44,55 @@ M (2n \tau) = M_0 \exp \left( -\dfrac{2n\tau}{T_2} \right)
 	\label{fig:nat2reg}
 \end{figure}
 
+\subsection{Определение $ T_1 $}
+Для определения $ T_1 $ использовалось приложение <<\textit{t1\_saturation\_recovery.app}>>, задающее импульсную последовательность насыщение-восстановление. Ожидается теоретическая зависимость:
+
+\begin{equation}
+\label{eq:M_parall-from-T1}
+M_{||} (\tau_1) = M_0 \left(1 - \exp \left( -\dfrac{\tau_1}{T_1} \right) \right)
+\end{equation}
+
+\subsubsection{Раствор $ Mn SO_4 $}
+Посмотрим на экспериментальные точки (график \ref{fig:mnt1exp}). Это экспоненциальный процесс, приходящий к насыщению (как и предсказывает теория):
+
+\begin{figure}[!h]
+	\hspace{-5em}
+	\includegraphics[width=1.2\linewidth]{data/Mn_T_1_exp}
+	\caption{}
+	\label{fig:mnt1exp}
+\end{figure}
+
+Построим график $ \ln \left( 1 - \dfrac{M_{||} (\tau_1)}{M_0} \right) = f(\tau_1)$. Ожидаем линейную зависимость с угловым коэффициентом $ k = -1/T_1 $ (график \ref{fig:mnt1reg}):
+
+\begin{figure}[h]
+	\hspace{-5em}
+	\includegraphics[width=1.2\linewidth]{data/Mn_T_1_reg}
+	\caption{}
+	\label{fig:mnt1reg}
+\end{figure}
+
+Полученные $ T_1 $ из регрессии занесем в таблицу \ref{table:all-T}.
+
+\subsubsection{Раствор $Na_2 SO_4$}
+Приведем аналогичные графики для растворов $ Na_2 SO_4 $ различной концентрации. Экспериментальные данные представлены на графике \ref{fig:nat1exp}.
+
+\begin{figure}[h]
+	\hspace{-5em}
+	\includegraphics[width=1.2\linewidth]{data/Na_T_1_exp}
+	\caption{}
+	\label{fig:nat1exp}
+\end{figure}
+
+Линеаризация экспериментальных данных приведена на графике \ref{fig:nat1reg}.
+	
+\begin{figure}[h]
+	\hspace{-5em}
+	\includegraphics[width=1.2\linewidth]{data/Na_T_1_reg}
+	\caption{}
+	\label{fig:nat1reg}
+\end{figure}
+
+Полученные из линейной регрессии $ T_1 $ занесены в таблицу \ref{table:all-T}.
 
 
 \begin{table}[ht]
