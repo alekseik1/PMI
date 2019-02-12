@@ -1,3 +1,5 @@
+dist: xenial
+sudo: true
 cache:
   directories:
     - $HOME/.cache/apt
@@ -26,6 +28,8 @@ before_install:
   - mkdir -p $HOME/.cache/apt/partial
   - sudo rm -rf /var/cache/apt/archives
   - sudo ln -s $HOME/.cache/apt /var/cache/apt/archives
+  - sudo chmod -R 777 $HOME/.cache/apt
+  - sudo chmod -R 777 /var/cache/apt/archives
 
 install:
   # Setup packages
