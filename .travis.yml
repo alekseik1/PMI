@@ -1,10 +1,13 @@
-dist: trusty
+dist: xenial
 sudo: true
 cache:
   directories:
     - $HOME/.cache/apt
 
 language: python
+python:
+    - "3.6"
+
 env:
   global:
   
@@ -12,7 +15,7 @@ env:
   matrix:
     - DIRECTORY="template" FILE="main" OUTPUT_NAME="template"
     - DIRECTORY="NMR-relaxation" FILE="main" OUTPUT_NAME="NMR-relaxation"
-    - DIRECTORY="I2" FILE="main" OUTPUT_NAME="I2"
+    - DIRECTORY="I2" FILE="main" OUTPUT_NAME="I2" NOTEBOOK="Analysis" NOTEBOOK_DIR="data"
     # Теория игр
     #- DIRECTORY="game-theory" FILE="main" OUTPUT_NAME="game-theory"
     # Пррограмма теормеха
@@ -33,6 +36,9 @@ before_install:
   - sudo chmod -R 777 /var/cache/apt/archives
 
 install:
+  - sudo apt install python-tornado
+  # Install pip packages
+  - pip install -r requirements.txt
   # Setup packages
   - sudo apt-get -qq update && sudo apt-get install -y $LATEX_PACKAGES
 
@@ -41,6 +47,8 @@ script:
   - export PREV_DIR=$(pwd) &&
     mkdir releases;
     cd $DIRECTORY &&
+    if [ $NOTEBOOK ]; then travis_wait 1 jupyter nbconvert --to script $NOTEBOOK_DIR/$NOTEBOOK.ipynb &&
+    ipython $NOTEBOOK_DIR/$NOTEBOOK.py; fi &&
     travis_wait 1 pdflatex -jobname=$OUTPUT_NAME -output-directory $PREV_DIR/releases $FILE.tex &&
     travis_wait 1 pdflatex -jobname=$OUTPUT_NAME -output-directory $PREV_DIR/releases $FILE.tex &&
     cd $PREV_DIR/releases &&
