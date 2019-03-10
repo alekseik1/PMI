@@ -48,7 +48,9 @@ script:
     mkdir releases;
     cd $DIRECTORY &&
     if [ $NOTEBOOK ]; then travis_wait 1 jupyter nbconvert --to script $NOTEBOOK_DIR/$NOTEBOOK.ipynb &&
-    ipython $NOTEBOOK_DIR/$NOTEBOOK.py; fi &&
+    cd $NOTEBOOK_DIR &&
+    ipython $NOTEBOOK.py; fi &&
+    cd $PREV_DIR/$DIRECTORY &&
     travis_wait 1 pdflatex -jobname=$OUTPUT_NAME -output-directory $PREV_DIR/releases $FILE.tex &&
     travis_wait 1 pdflatex -jobname=$OUTPUT_NAME -output-directory $PREV_DIR/releases $FILE.tex &&
     cd $PREV_DIR/releases &&
