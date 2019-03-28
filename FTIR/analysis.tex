@@ -107,30 +107,53 @@
 \end{equation}
 где $j$ --- нижний вращательный уровень.
 
-Определим графически постоянные $B_0$ и $B_1$. Этого построим следующие зависимости (рис. \ref{deltaF'} и \ref{deltaF''}).
-
-\begin{figure}[h!]
+\begin{table}
 	\centering
-%	\includegraphics[height=0.5\textheight]{deltaF'}
-	\includegraphics[height=0.5\textheight]{data/delta_F'}
-	\caption{Комбинационная разность $\Delta_2F'(j)$}
-	\label{deltaF'}
-\end{figure}
-\begin{figure}[h!]
-	\centering
-%	\includegraphics[height=0.4\textheight]{deltaF''}
-	\includegraphics[height=0.5\textheight]{data/delta_F''}
-	\caption{Комбинационная разность $\Delta_2F''(j)$}
-	\label{deltaF''}
-\end{figure}
+	\begin{tabular}{|c|c|c||c|c|}
+		\hline
+		$j$ & (P-ветвь) $\nu, \text{ см}^{-1}$ & (R-ветвь) $\nu, \text{ см}^{-1}$ & $\Delta F', \text{ см}^{-1}$ & $\Delta F'', \text{ см}^{-1}$ \\
+		\hline 
+		0 &  & 2905 &  &  \\ 
+		\hline 
+		1 & 2863 & 2924 & 61 & 63 \\ 
+		\hline 
+		2 & 2842 & 2943 & 101 & 104 \\ 
+		\hline 
+		3 & 2820 & 2961 & 142 & 146 \\ 
+		\hline 
+		4 & 2797 & 2979 & 182 & 187 \\ 
+		\hline 
+		5 & 2774 & 2996 & 222 & 229 \\ 
+		\hline 
+		6 & 2750 & 3012 & 262 & 269 \\ 
+		\hline 
+		7 & 2726 & 3028 & 301 & 310 \\ 
+		\hline 
+		8 & 2702 & 3044 & 342 & 352 \\ 
+		\hline 
+		9 & 2676 & 3059 & 383 & 394 \\ 
+		\hline 
+		10 & 2649 & 3072 &  &  \\ 
+		\hline 
+	\end{tabular}
+	\label{table:peaks}
+	\caption{Соотнесение пиков}
+\end{table} 
 
-Откуда получаем
+Для того, чтобы построить графики, необходимо произвести соотнесение пиков. Это сделаем с учетом замечания, что для $P$-ветви отчет начинается с $j=1$, а для $R$-ветви -- с $j=0$. Результаты занесем в таблицу 
+%\ref{table:peaks}
+1
+.
+
+Определим графически постоянные $B_0$ и $B_1$. Этого построим следующие зависимости (рис. \ref{deltaF'} и \ref{deltaF''}) и получим из них:
+
 \begin{equation}
 B_0 = \dfrac{40.28 \pm 0.03}{4} \text{ см}^{-1} = 10.070 \pm 0.008 \text{ см$^{-1}$}
 \end{equation}
 \begin{equation}
 B_1 = \dfrac{41.48 \pm 0.03}{4} \text{ см}^{-1} = 10.369 \pm 0.008 \text{ см$^{-1}$}
 \end{equation}
+
 Отсюда можно найти среднее значение $\omega_e(1-2\chi_e)$
 \begin{equation}
 \omega_e(1-2\chi_e) = 
@@ -141,12 +164,27 @@ B_1 = \dfrac{41.48 \pm 0.03}{4} \text{ см}^{-1} = 10.369 \pm 0.008 \text{ см
 \begin{equation}
 \omega_e = 
 2907.7
- \text{ см$^{-1}$}
+\text{ см$^{-1}$}
 \end{equation}
 \begin{equation}
 \chi_e = 
 0.008
 \end{equation}
+
+\begin{figure}[H]
+	\centering
+%	\includegraphics[height=0.5\textheight]{deltaF'}
+	\includegraphics[height=0.45\textheight]{data/delta_F'}
+	\caption{Комбинационная разность $\Delta_2F'(j)$}
+	\label{deltaF'}
+\end{figure}
+\begin{figure}[H]
+	\centering
+%	\includegraphics[height=0.4\textheight]{deltaF''}
+	\includegraphics[height=0.45\textheight]{data/delta_F''}
+	\caption{Комбинационная разность $\Delta_2F''(j)$}
+	\label{deltaF''}
+\end{figure}
 
 Для легких молекул, а также для больших значений $j$ необходимо учитывать постоянную центробежного растяжения $D$ и тогда
 \begin{equation}
@@ -155,24 +193,25 @@ B_1 = \dfrac{41.48 \pm 0.03}{4} \text{ см}^{-1} = 10.369 \pm 0.008 \text{ см
 Для практических вычислений удобно воспользоваться преобразованным выражением 
 \begin{equation}
 \cfrac{\Delta_2F(j)}{\left(j+\frac{1}{2}\right)}=4B-8D\left(j+\frac{1}{2}\right)^2.
+\label{eq:B_D_main_eq}
 \end{equation}
-Итак, построим нужные зависимости (рис. \ref{deltaF'_j}, \ref{deltaF''_j}).
+На основе уравнения (\ref{eq:B_D_main_eq}), построим нужные зависимости (рис. \ref{deltaF'_j}, \ref{deltaF''_j}).
 %\vspace{5cm}
 \begin{figure}[H]
-	\vspace{-0.8cm}
+	\vspace{-0.5cm}
 	\centering
 %	\includegraphics[height=0.49\textheight]{deltaF'_j_05}
 	\includegraphics[height=0.49\textheight]{data/delta_F'_j_sq}
-	\vspace{-0.2cm}
+	\vspace{-0.5cm}
 	\caption{Приведенная комбинационная разность $\Delta_2F'(j)$}
 	\label{deltaF'_j}
 \end{figure}
 \begin{figure}[H]
-	\vspace{-1cm}
+	\vspace{-0.8cm}
 	\centering
 %	\includegraphics[height=0.43\textheight]{deltaF''_j_05}
 	\includegraphics[height=0.49\textheight]{data/delta_F''_j_sq}
-	\vspace{-0.2cm}
+	\vspace{-0.3cm}
 	\caption{Приведенная комбинационная разность $\Delta_2F''(j)$}
 	\label{deltaF''_j}
 \end{figure}
