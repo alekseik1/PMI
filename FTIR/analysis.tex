@@ -3,33 +3,86 @@
 \section{Обработка результатов измерений}
 \subsection{Влияние разрешения на вид спектра}
 Для начала изобразим вид опорного спектра (без колбы) при разном разрешении (рис. \ref{resolution}).
-\begin{figure}[h!]
-	\centering
-	\includegraphics[angle = 90, height=0.84\textheight]{resolution}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[angle = 90, height=0.84\textheight]{resolution}
+%	\caption{Опорный спектр при различном разрешении}
+%	\label{resolution}
+%\end{figure}
+
+
+
+\begin{figure}[h]
+	\begin{minipage}[h]{0.5\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{data/opor_0_5}
+	\end{minipage}
+	\begin{minipage}[h!]{0.5\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{data/opor_1}
+	\end{minipage}
+	\begin{minipage}[h!]{0.5\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{data/opor_2}
+	\end{minipage}
+	\begin{minipage}[h!]{0.5\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{data/opor_4}
+	\end{minipage}
 	\caption{Опорный спектр при различном разрешении}
 	\label{resolution}
 \end{figure}
 
-Как хорошо видно, при увеличении разрешения мы хуже разрешаем спектральную картину.
-\subsection{Влияние апотизации на вид спектра}
-Изобразим на примере одного пика из опорного спектра, как влияет на спектр вид апотизации (рис. \ref{apotis}).
-\begin{figure}[h!]
+
+
+
+
+Как видно на примере $\nu \approx 1300 \text{ см}^{-1}$, при увеличении разрешения мы хуже разрешаем спектральную картину.
+\subsection{Влияние аподизации на вид спектра}
+Изобразим на примере двух пиков из опорного спектра, взятых при разном разрешении прибора, как влияет на спектр вид аподизации (рис. \ref{apotis}).
+
+Как видно, треугольная аподизация уширяют пик (падает разрешающая способность), однако остаточные колебания уменьшаются.
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=1.1\linewidth]{apotis}
-	\caption{Различная апотизация}
+	\begin{minipage}[h!]{0.9\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{data/apodiz_comparation_0_5}
+	\end{minipage}\\
+	\begin{minipage}[h!]{0.9\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{data/apodiz_comparation_4}
+	\end{minipage}
+	\caption{Опорный спектр при различном разрешении}
 	\label{apotis}
 \end{figure}
 
-Как видно, треугольная и бипарабольная апотизация уширяют пик (падает разрешающая способность), однако остаточные колебания уменьшаются.
+\subsection{Спектр пустой кюветы}
+Зарегистрируем спектр пустой кюветы (рис. \ref{fig:empty_kvartz}).
+
+\begin{figure}[H]
+	\centering
+	\vspace{-1.5cm}
+	%	\hspace{-1.2cm}
+	\includegraphics[angle = 90, height=0.85\textheight]{data/vozdyh_kvartz}
+	\caption{Спектр пустой кюветы с воздухом}
+	\label{fig:empty_kvartz}
+\end{figure}
+
+В ходе эксперимента не удалось полностью избавиться от воды в кювете, поскольку предыдущие экспериментаторы не почистили ее за собой (\textit{мудаки, короче}) и нам пришлось ее промывать непосредственно перед экспериментом. Из-за этих непредвиденных обстоятельств колба не успела до конца просохнуть, что и отразилось на структуре спектра.
+
 \subsection{Молекула HCl}
 Изобразим колебательно-вращательный спектр молекулы HCl (рис. \ref{HCL_spec}). Для вычитания базовой линии, нахождения и фитирования пиков был использован пакет Origin.
-\vspace{5cm}
-\begin{figure}[h!]
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[angle = 90, height=0.94\textheight]{HCL_spec.png}
+%	\hspace{-1.2cm}
+	\includegraphics[angle = 90, height=0.88\textheight]{data/HCL_peaks}
 	\caption{Колебательно-вращательный спектр молекулы HCl}
 	\label{HCL_spec}
 \end{figure}
+
+% TODO: подсчитать СВОИ константы
 
 Для определения вращательных постоянных $B_0$ и $B_1$ из
 колебательно-вращательных спектров используются так называемые
@@ -58,34 +111,41 @@
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[height=0.5\textheight]{deltaF'}
+%	\includegraphics[height=0.5\textheight]{deltaF'}
+	\includegraphics[height=0.5\textheight]{data/delta_F'}
 	\caption{Комбинационная разность $\Delta_2F'(j)$}
 	\label{deltaF'}
 \end{figure}
 \vspace{2cm}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[height=0.4\textheight]{deltaF''}
+%	\includegraphics[height=0.4\textheight]{deltaF''}
+	\includegraphics[height=0.5\textheight]{data/delta_F''}
 	\caption{Комбинационная разность $\Delta_2F''(j)$}
 	\label{deltaF''}
 \end{figure}
 \noindent Откуда получаем
 \begin{equation}
-B_0 = 10.321\pm0.014 \text{ см$^{-1}$}
+B_0 = \dfrac{40.28 \pm 0.03}{4} \text{ см}^{-1} = 10.070 \pm 0.008 \text{ см$^{-1}$}
 \end{equation}
 \begin{equation}
-B_1 = 10.0007\pm0.0014 \text{ см$^{-1}$}
+B_1 = \dfrac{41.48 \pm 0.03}{4} \text{ см}^{-1} = 10.369 \pm 0.008 \text{ см$^{-1}$}
 \end{equation}
 Отсюда можно найти среднее значение $\omega_e(1-2\chi_e)$
 \begin{equation}
-\omega_e(1-2\chi_e) = 2907.64 \text{ см$^{-1}$}
+\omega_e(1-2\chi_e) = 
+2858.56
+\text{ см$^{-1}$}
 \end{equation}
 Воспользуемся табличными данными для волнового числа первого обертона $$2\omega_e(1-3\chi_e) = 5667.98 \text{ см$^{-1}$},$$ откуда
 \begin{equation}
-\omega_e = 3054.94 \text{ см$^{-1}$}
+\omega_e = 
+2907.7
+ \text{ см$^{-1}$}
 \end{equation}
 \begin{equation}
-\chi = 0.024
+\chi = 
+0.008
 \end{equation}
 
 Для легких молекул, а также для больших значений $j$ необходимо учитывать постоянную центробежного растяжения $D$ и тогда
@@ -98,70 +158,83 @@ B_1 = 10.0007\pm0.0014 \text{ см$^{-1}$}
 \end{equation}
 Итак, построим нужные зависимости (рис. \ref{deltaF'_j}, \ref{deltaF''_j}).
 %\vspace{5cm}
-\begin{figure}[h!]
+\begin{figure}[H]
+	\vspace{-0.8cm}
 	\centering
-	\includegraphics[height=0.43\textheight]{deltaF'_j_05}
+%	\includegraphics[height=0.49\textheight]{deltaF'_j_05}
+	\includegraphics[height=0.49\textheight]{data/delta_F'_j_sq}
+	\vspace{-0.2cm}
 	\caption{Приведенная комбинационная разность $\Delta_2F'(j)$}
 	\label{deltaF'_j}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[H]
+	\vspace{-1cm}
 	\centering
-	\includegraphics[height=0.43\textheight]{deltaF''_j_05}
+%	\includegraphics[height=0.43\textheight]{deltaF''_j_05}
+	\includegraphics[height=0.49\textheight]{data/delta_F''_j_sq}
+	\vspace{-0.2cm}
 	\caption{Приведенная комбинационная разность $\Delta_2F''(j)$}
 	\label{deltaF''_j}
 \end{figure}
 
+% TODO: ДОДЕЛАЙ ЭТО днем. Сейчас 4:32 и я устал
 \noindent Откуда, получим молекулярные константы
 \begin{equation}
-B_0 = 10.440\pm0.003 \text{ см$^{-1}$}
+B_0 = \dfrac{40.571 \pm 0.03}{4} \text{ см}^{-1}
+= 10.143 \pm 0.008 \text{ см$^{-1}$}
+\end{equation}
+% - slope/8
+\begin{equation}
+D_0 = (0.93 \pm 0.10) \cdot 10^{-3} \text{ см$^{-1}$}
 \end{equation}
 \begin{equation}
-D_0 = (0.505\pm0.016)\cdot10^{-3}\text{ см$^{-1}$}
+B_1 = \dfrac{41.757 \pm 0.03}{4} \text{ см}^{-1}
+= 10.439 \pm 0.008 \text{ см$^{-1}$}
 \end{equation}
+% -slope/8
 \begin{equation}
-B_1 = 10.1412\pm0.0017\text{ см$^{-1}$}
+D_1 = (0.77 \pm 0.09) \cdot 10^{-3} \text{ см$^{-1}$}
 \end{equation}
+% TODO: уже 4:45. Добей это завтра
+% Нет уж, пусть это будет сегодня
 \begin{equation}
-D_1 = (0.59\pm0.02)\cdot10^{-3}\text{ см$^{-1}$}
-\end{equation}
-\begin{equation}
-B_0 = \cfrac{h}{8\pi^2\mu r_0^2c} \Longrightarrow r_0 = \sqrt{\cfrac{h}{8\pi^2\mu B_0 c}} = 1.23 \text{ \AA}
+B_0 = \cfrac{h}{8\pi^2\mu r_0^2c} \Longrightarrow
+r_0 = \sqrt{\cfrac{h}{8\pi^2\mu B_0 c}} = 1.25 \text{ \AA}
 \end{equation}
 
 \subsection{Воздух}
-Изобразим спектр воздуха из легких Шадымова Владимира (рис. \ref{air_co2}). На спектре видны участки, характерные для спектра воды и CO$_2$.
-\subsection{Неизвестные вещества}
-Изобразим спектры, предложенные на анализ. На спектрах отмечены характерные пики, которые позволили определить анализируемое вещество (рис. \ref{ethanol}, \ref{isopropanol}).
-
-Для того, чтобы точно убедиться в справедливости анализа, изобразим спектры этанола и изопропила (рис. \ref{ethanol_real}, \ref{propanol_real}), взятые с электронного ресурса (https://sdbs.db.aist.go.jp/).
-\vspace{5cm}
-\begin{figure}[h!]
+Изобразим спектр воздуха из легких (рис. \ref{air_co2}). На спектре видны участки, характерные для спектра воды и CO$_2$.
+\begin{figure}[H]
 	\centering
-	\includegraphics[angle = 90, height=0.95\textheight]{air_co2}
+	\includegraphics[angle = 90, height=0.95\textheight]{data/dihaniye}
 	\caption{ИК-спектр воздуха из легких}
 	\label{air_co2}
 \end{figure}
-\begin{figure}[h!]
+\subsection{Неизвестные вещества}
+Изобразим спектры, предложенные на анализ. На спектрах отмечены характерные пики, которые позволили определить анализируемое вещество (рис. \ref{ethanol}, \ref{isopropanol}).
+
+Для того, чтобы точно убедиться в справедливости анализа, изобразим спектры этанола и изопропила (рис. \ref{ethanol_real}, \ref{propanol_real}), взятые с электронного ресурса (\href{https://sdbs.db.aist.go.jp/}{https://sdbs.db.aist.go.jp/}).
+\begin{figure}[H]
 	\centering
-	\includegraphics[angle = 90, height=0.95\textheight]{ethanol}
-	\caption{Исследуемый спектр (этанол)}
+	\includegraphics[angle = 90, height=0.83\textheight]{data/ethanol}
+	\caption{Неизвестное вещество 1 (этанол)}
 	\label{ethanol}
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[angle = 90, height=0.95\textheight]{isopropanol}
-	\caption{Исследуемый спектр (изопропанол)}
+	\includegraphics[angle = 90, height=0.95\textheight]{data/isopropanol}
+	\caption{Неизвестное вещество 2 (изопропанол)}
 	\label{isopropanol}
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.9\textwidth]{ethanol_real}
+	\includegraphics[width=0.9\textwidth]{data/ethanol_real}
 	\caption{ИК-спектр поглощения этанола}
 	\label{ethanol_real}
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.9\textwidth]{propanol_real}
+	\includegraphics[width=0.9\textwidth]{data/propanol_real}
 	\caption{ИК-спектр поглощения изопропанола}
 	\label{propanol_real}
 \end{figure}
