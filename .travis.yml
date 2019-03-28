@@ -15,6 +15,7 @@ env:
   matrix:
     - DIRECTORY="template" FILE="main" OUTPUT_NAME="template"
     - DIRECTORY="NMR-relaxation" FILE="main" OUTPUT_NAME="NMR-relaxation"
+    - DIRECTORY="FTIR" FILE="mail" OUTPUT_NAME="FTIR"
     #- DIRECTORY="I2" FILE="main" OUTPUT_NAME="I2" 
     # Теория игр
     #- DIRECTORY="game-theory" FILE="main" OUTPUT_NAME="game-theory"
