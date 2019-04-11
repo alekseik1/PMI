@@ -67,25 +67,19 @@
 \begin{table}[H]
 	\centering
 	\caption{Расчет вращательной температуры по угловому коэффициенту}
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c||c|c|c|c|c|}
 		\hline 
-		$I$, A & $T_\text{rot}$, K \\ 
+		$I$, A & 0.45 & 0.50 & 0.55 & 0.60 & 0.65 \\ 
 		\hline 
-		0.45 & 1000 \\ 
-		\hline 
-		0.50 & 1382 \\ 
-		\hline 
-		0.55 & 1210 \\ 
-		\hline 
-		0.6 & 1209 \\ 
-		\hline 
-		0.65 & 1234 \\ 
+		$T_\text{rot}$, K & 1000 & 1382 & 1210 & 1209 & 1234 \\
 		\hline 
 	\end{tabular} 
 	\label{tab:T_rot}
 \end{table}
 
-\begin{figure}[H]
+Графики, по которым строился МНК для определения вращательной температуры, можно найти ниже (рис. \ref{polosa_45} -- \ref{polosa_65}).
+
+\begin{figure}[h]
 	\begin{minipage}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{data/graph_I=0,45_polosa}
@@ -119,4 +113,48 @@
 		\label{polosa_65}
 	\end{minipage} 
 	\hfill
+\end{figure}
+
+\subsection{Вычисление колебательной температуры}
+Для определения колебательной температуры воспользуемся соотношением (\ref{eq:main_rot}). 
+Для этого необходимо подставить вместо $I_{\nu' \nu''}$ площадь под графиком пиков (у нас это рис. \ref{full_45} -- \ref{full_65}). 
+Для оценки можно взять высоту пика. 
+Вместо $\nu_{\nu' \nu''}$ -- волновое число, равное $1/ \lambda$.
+Коэффициенты $q_{\nu' \nu''}$ взять из таблицы \ref{tab:frank-koeffs}.
+$G(\nu)$ берем из табл. \ref{tab:G_table}.
+
+Полученные данные нанесем на график и определим угловой коэффициент. 
+В нашем построении этот коэффициент равен $k = 1/T_\text{vib}$. 
+%Ограничимся построением для двух значений тока, поскольку $T_\text{rot}$ не должен зависеть от $I$ (что как раз прослеживается на двух полученных графиках).
+Полученные результаты занесем в табл. \ref{tab:T_vib}
+
+\begin{table}[h]
+	\centering
+	\caption{Расчет колебательной температуры по угловому коэффициенту}
+	\begin{tabular}{|c||c|c|c|c|}
+		\hline 
+		$I$, A & 0.60 & 0.60 & 0.65 & 0.65 \\
+		\hline
+		$\Delta \nu$ & 1 & 2 & 1 & 2 \\
+		\hline 
+		$T_\text{vib}$, K & $\approx 3400$ & $\approx 4300$ & $\approx 2700$ & $\approx 3800$ \\
+		\hline 
+	\end{tabular} 
+	\label{tab:T_vib}
+\end{table}
+
+\begin{figure}[h]
+	\begin{minipage}{0.93\linewidth}
+		\vspace{-2cm}
+		\centering
+		\includegraphics[width=\linewidth]{data/graph_T_vib_60}
+		\caption{Определение $T_\text{vib}$ при $I= 0.60$ А, $P$= 36.5 торр}
+		\label{fig:T_rot_60}
+	\end{minipage} 
+	\begin{minipage}{0.93\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{data/graph_T_vib_65}
+		\caption{Определение $T_\text{vib}$ при $I= 0.65$ А, $P$= 36.5 торр}
+		\label{fig:T_rot_65}
+	\end{minipage}
 \end{figure}
