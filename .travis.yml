@@ -16,6 +16,7 @@ env:
     - DIRECTORY="template" FILE="main" OUTPUT_NAME="template"
     - DIRECTORY="NMR-relaxation" FILE="main" OUTPUT_NAME="NMR-relaxation"
     - DIRECTORY="FTIR" FILE="main" OUTPUT_NAME="FTIR"
+    - DIRECTORY="N2" FILE="main" OUTPUT_NAME="N2"
     #- DIRECTORY="I2" FILE="main" OUTPUT_NAME="I2" 
     # Теория игр
     #- DIRECTORY="game-theory" FILE="main" OUTPUT_NAME="game-theory"
